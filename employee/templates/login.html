@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">🔐 Admin Login</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label>Username</label>
+        <input name="username" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control" required>
+    </div>
+    <button class="btn btn-primary">Login</button>
+    <div class="mt-2">
+        <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-danger mt-3">{{ messages[0] }}</div>
+        {% endif %}
+    {% endwith %}
+</form>
+{% endblock %}

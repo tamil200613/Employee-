@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Employee</h2>
+<form method="POST">
+    <label>ID:</label>
+    <input type="text" name="id" required class="form-control"><br>
+
+    <label>Name:</label>
+    <input type="text" name="name" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required class="form-control"><br>
+
+    <label>Phone Number:</label>
+    <input type="text" name="phone" pattern="\d{10}" title="Must be 10 digits" required class="form-control"><br>
+
+    <label>Designation:</label>
+    <input type="text" name="designation" pattern="[A-Za-z ]+" title="Only letters and spaces allowed" required class="form-control"><br>
+
+    <label>Salary:</label>
+    <input type="number" name="salary" step="0.01" required class="form-control"><br>
+
+    <button class="btn btn-success">Add Employee</button>
+</form>
+{% endblock %}
